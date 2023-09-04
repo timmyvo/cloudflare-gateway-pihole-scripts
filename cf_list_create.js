@@ -105,10 +105,13 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
 
   const listsToCreate = Math.ceil(domains.length / 1000);
 
-  if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${expectedListsToCreate} list(s) will be created`);
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
   const chunks = chunkArray(domains, 1000);
+  // Verify uploading process
+  let successfullyCreatedLists = 0;
 
   // Create Cloudflare Zero Trust lists
   for (const [index, chunk] of chunks.entries()) {
@@ -123,9 +126,18 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
     try {
       await createZeroTrustList(listName, properList, (index+1), listsToCreate);
       await sleep(350); // Sleep for 350ms between list additions
+      successfullyCreatedLists++;
+      console.log(`Successfully created list "${listName}"`);
     } catch (error) {
       console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
     }
+  }
+});
+  // Create Cloudflare Zero Trust lists
+  if (successfullyCreatedLists === listsToCreate) {
+    console.log(`Successfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.`);
+  } else {
+    console.error(`Expected to create ${listsToCreate} lists, but only created ${successfullyCreatedLists} lists.`);
   }
 });
 
