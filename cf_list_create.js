@@ -132,8 +132,8 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
     }
   }
-});
-  // Create Cloudflare Zero Trust lists
+
+  // Checking upload successful
   if (successfullyCreatedLists === listsToCreate) {
     console.log(`Successfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.`);
   } else {
