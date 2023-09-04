@@ -181,7 +181,8 @@ async function createZeroTrustList(name, items, currentItem, totalItems) {
   );
 
   const listId = response.data.result.id;
-  console.log(`Created Zero Trust list`, process.env.CI ? "(redacted on CI)" : `"${name}" with ID ${listId} - ${totalItems - currentItem} left`);
+  // console.log(`Created Zero Trust list`, process.env.CI ? "(redacted on CI)" : `"${name}" with ID ${listId} - ${totalItems - currentItem} left`);
+  console.log(`Created Zero Trust list "${name}" with ID ${listId} - ${totalItems - currentItem} left`);
 }
 
 function percentage(percent, total) {
