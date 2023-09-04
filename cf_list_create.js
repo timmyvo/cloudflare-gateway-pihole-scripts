@@ -106,13 +106,14 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   const listsToCreate = Math.ceil(domains.length / 1000);
 
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
-  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`)
+  
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
   const chunks = chunkArray(domains, 1000);
   // Verify uploading process
   let successfullyCreatedLists = 0;
-
+  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  
   // Create Cloudflare Zero Trust lists
   for (const [index, chunk] of chunks.entries()) {
     const listName = `CGPS List - Chunk ${index}`;
