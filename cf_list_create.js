@@ -133,7 +133,6 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
     } catch (error) {
       // console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
       console.error(`Error creating list "${listName}":`, error.response ? error.response.data : error.message);
-      process.exit(1);
     }
   }
 
