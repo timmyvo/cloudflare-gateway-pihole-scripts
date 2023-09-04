@@ -81,7 +81,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       seen.add(domain); // Add it to the set
       uniqueDomains.push(domain); // Push the domain to the uniqueDomains array
     } else { // If the domain is in the set
-      console.warn(`Duplicate domain found: ${domain} - removing`); // Log the duplicate domain
+      // console.warn(`Duplicate domain found: ${domain} - removing`); // Log the duplicate domain
     }
   }
 
@@ -91,7 +91,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   // Remove domains from the domains array that are present in the whitelist array
   domains = domains.filter(domain => {
     if (whitelist.includes(domain)) {
-      console.warn(`Domain found in the whitelist: ${domain} - removing`);
+      // console.warn(`Domain found in the whitelist: ${domain} - removing`);
       return false;
     }
     return true;
@@ -104,10 +104,11 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   }
 
   const listsToCreate = Math.ceil(domains.length / 1000);
+  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
 
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
   // Moved the log line outside of the callback function
-  // console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  //console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
   const chunks = chunkArray(domains, 1000);
@@ -130,12 +131,13 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       successfullyCreatedLists++;
       console.log(`Successfully created list "${listName}"`);
     } catch (error) {
-      console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
+      // console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
+      console.error(`Error creating list "${listName}":`, error.response ? error.response.data : error.message);
     }
   }
 
   // Moved the log line outside of the callback function
-  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  // console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
   
   // Checking upload successful
   if (successfullyCreatedLists === listsToCreate) {
