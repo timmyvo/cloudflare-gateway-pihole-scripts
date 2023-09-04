@@ -106,7 +106,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   const listsToCreate = Math.ceil(domains.length / 1000);
 
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
-  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${expectedListsToCreate} list(s) will be created`);
+  console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`)
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
   const chunks = chunkArray(domains, 1000);
