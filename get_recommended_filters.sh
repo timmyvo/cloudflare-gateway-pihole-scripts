@@ -14,7 +14,6 @@ urls=(
   # https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
   https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt
 
 )
