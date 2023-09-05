@@ -50,7 +50,7 @@ async function getZeroTrustLists() {
                 'Authorization': `Bearer ${API_TOKEN}`,
                 'Content-Type': 'application/json',
                 'X-Auth-Email': ACCOUNT_EMAIL,
-                'X-Auth-Key': API_TOKEN,
+                // 'X-Auth-Key': API_TOKEN,
             },
             data: {
                 "name": "CGPS Filter Lists",
