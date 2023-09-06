@@ -15,7 +15,7 @@ urls=(
   https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
   # https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt
-  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt
+  # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt
   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt
   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt
 )
