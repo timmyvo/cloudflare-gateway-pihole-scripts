@@ -20,6 +20,13 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.amazon.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.apple.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.huawei.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.winoffice.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.extended.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.lgwebos.txt
 )
 
 # download all files in parallel and append them to input.csv
