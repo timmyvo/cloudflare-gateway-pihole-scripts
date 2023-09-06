@@ -42,7 +42,6 @@ fs.readFile('whitelist.csv', 'utf8', async (err, data) => {
   }  
 });
 
-
 // Read input.csv and parse domains
 fs.readFile('input.csv', 'utf8', async (err, data) => {
   if (err) {
@@ -108,10 +107,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
 
   const listsToCreate = Math.ceil(domains.length / 1000);
   await console.log(`Found ${domains.length} valid domains after final trim - ${listsToCreate} list(s) will be created`);
-
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
-  // Moved the log line outside of the callback function
-  //console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
   const chunks = chunkArray(domains, 1000);
@@ -138,9 +134,6 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       console.error(`Error creating list "${listName}":`, error.response ? error.response.data : error.message);
     }
   }
-
-  // Moved the log line outside of the callback function
-  // console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
   
   // Checking upload successful
   if (successfullyCreatedLists === listsToCreate) {
