@@ -62,7 +62,7 @@ async function getZeroTrustLists() {
             }
         });
 
-        console.log('Response from API:', resp.data);
+        console.log('Response from API:', resp);
         
         if (resp.data.success) {
             console.log('Success:', resp.data.success);
