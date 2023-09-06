@@ -72,6 +72,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   }).filter(domain => {
     return domainValidationPattern.test(domain);
   });
+  await console.log(`Found ${domains.length} valid domains in filterlist.`);
 
   // Check for duplicates in domains array
   let uniqueDomains = [];
