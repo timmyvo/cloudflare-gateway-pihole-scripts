@@ -59,7 +59,8 @@ async function getZeroTrustLists() {
         }
     });    
 
-    console.log('Success:', resp.data.success);
+    // console.log('Success:', resp.data.success);
+    console.log('Success:', resp);
 
 })();
 
