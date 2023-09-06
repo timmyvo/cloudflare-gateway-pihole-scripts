@@ -17,6 +17,8 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt
   # https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/light.txt
+  https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/pornography-hosts
+  https://urlhaus.abuse.ch/downloads/hostfile
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt
