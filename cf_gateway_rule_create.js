@@ -58,8 +58,12 @@ async function getZeroTrustLists() {
             "traffic": wirefilter_expression,
         }
     });
-    console.log('Success:', resp);
-    // console.log('Success:', resp.data.success)
+    // console.log('Success:', resp);
+    console.log('Success:', resp.data.success);
+    console.log('Success:', resp.data.status);
+    console.log('Success:', resp.data.statusText);
+    console.log('Success:', resp.data.errors);
+    console.log('Success:', resp.data.messages);
 })();
 
 async function sleep(ms) {
