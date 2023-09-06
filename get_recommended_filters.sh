@@ -4,7 +4,7 @@ source $(dirname "$0")/helpers.sh
 
 # declare an array of urls
 urls=(
-  https://raw.githubusercontent.com/mullvad/dns-blocklists/main/output/doh/doh_adblock.txt
+  # https://raw.githubusercontent.com/mullvad/dns-blocklists/main/output/doh/doh_adblock.txt
   https://raw.githubusercontent.com/mullvad/dns-blocklists/main/output/doh/doh_gambling.txt
   https://raw.githubusercontent.com/mullvad/dns-blocklists/main/output/doh/doh_privacy.txt
   # https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts
