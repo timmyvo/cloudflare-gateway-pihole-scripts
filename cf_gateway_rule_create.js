@@ -57,11 +57,12 @@ async function getZeroTrustLists() {
             "filters": ["dns"],
             "traffic": wirefilter_expression,
         }
-    });
+    });    
     // console.log('Success:', resp);
-    console.log('Success:', resp.data.success);
-    console.log('Status:', resp.status);
-    console.log('Status Text:', resp.statusText);
+    // console.log('Success:', resp.data.success);
+    console.log('Log:', resp.data);
+    console.log('Status:', resp.response.status);
+    console.log('Status Text:', resp.response.statusText);
     console.log('Error:', resp.data.errors);
     console.log('Error Message:', resp.data.messages);
 })();
