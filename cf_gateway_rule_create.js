@@ -62,12 +62,12 @@ async function getZeroTrustLists() {
             }
         });
 
-        
-        
-        if (resp.data.success) {
+        console.log('Response from API:', resp.data);
+        if (resp.status === 200 && resp.data.success) {
             console.log('Success:', resp.data.success);
         } else {
-            console.error('API Request Failed:', resp.data);
+            console.error('API Request Failed. Status Code:', resp.status);
+            console.error('API Response Data:', resp.data);
         }
     } catch (error) {
         console.error('Error creating Firewall rule:', error.message);
