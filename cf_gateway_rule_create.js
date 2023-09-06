@@ -62,7 +62,7 @@ async function getZeroTrustLists() {
                 "traffic": wirefilter_expression,
             }
         });
-        console.log('Finished the Cloudflare API request.');
+        await console.log(resp);
 
         if (resp) {
             console.log('Response from API:', resp.data);
