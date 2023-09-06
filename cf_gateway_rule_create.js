@@ -43,6 +43,7 @@ async function getZeroTrustLists() {
 
         if (!process.env.CI) console.log(`Firewall expression contains ${wirefilter_expression.length} characters, and checks against ${filtered_lists.length} filter lists.`)
 
+        console.log('Starting the Cloudflare API request...');
         const resp = await axios.request({
             method: 'POST',
             url: `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/gateway/rules`,
@@ -61,14 +62,20 @@ async function getZeroTrustLists() {
                 "traffic": wirefilter_expression,
             }
         });
+        console.log('Finished the Cloudflare API request.');
 
-        console.log('Response from API:', resp.data);
-        if (resp.status === 200 && resp.data.success) {
-            console.log('Success:', resp.data.success);
+        if (resp) {
+            console.log('Response from API:', resp.data);
+            if (resp.status === 200 && resp.data.success) {
+                console.log('Success:', resp.data.success);
+            } else {
+                console.error('API Request Failed. Status Code:', resp.status);
+                console.error('API Response Data:', resp.data);
+            }
         } else {
-            console.error('API Request Failed. Status Code:', resp.status);
-            console.error('API Response Data:', resp.data);
+            console.error('No response received from the API.');
         }
+        
     } catch (error) {
         console.error('Error creating Firewall rule:', error.message);
         process.exit(1);
