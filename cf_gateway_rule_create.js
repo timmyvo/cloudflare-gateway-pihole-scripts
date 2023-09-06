@@ -58,7 +58,7 @@ async function getZeroTrustLists() {
             "traffic": wirefilter_expression,
         }
     });
-    // console.log('Success:', resp);
+    console.log('Success:', resp);
     console.log('Success:', resp.data.success);
     console.log('Success:', resp.data.status);
     console.log('Success:', resp.data.statusText);
