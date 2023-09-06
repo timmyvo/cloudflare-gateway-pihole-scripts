@@ -72,7 +72,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   }).filter(domain => {
     return domainValidationPattern.test(domain);
   });
-  await console.log(`Found ${domains.length} valid domains in filterlist.`);
+  await console.log(`Found ${domains.length} valid domains in filterlists.`);
 
   // Check for duplicates in domains array
   let uniqueDomains = [];
@@ -85,6 +85,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       // console.warn(`Duplicate domain found: ${domain} - removing`); // Log the duplicate domain
     }
   }
+  await console.log(`Found ${uniqueDomains.length} valid domains after removing duplicates.`);
 
   // Replace domains array with uniqueDomains array
   domains = uniqueDomains;
@@ -97,6 +98,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
     }
     return true;
   });
+  await console.log(`Found ${domains.length} valid domains after removing whitelist domains.`);
 
   // Trim array to 300,000 domains if it's longer than that
   if (domains.length > LIST_ITEM_LIMIT) {
@@ -105,7 +107,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   }
 
   const listsToCreate = Math.ceil(domains.length / 1000);
-  await console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
+  await console.log(`Found ${domains.length} valid domains after final trim - ${listsToCreate} list(s) will be created`);
 
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
   // Moved the log line outside of the callback function
