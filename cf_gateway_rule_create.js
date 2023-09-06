@@ -14,7 +14,7 @@ async function getZeroTrustLists() {
         'Authorization': `Bearer ${API_TOKEN}`,
         'Content-Type': 'application/json',
         'X-Auth-Email': ACCOUNT_EMAIL,
-        'X-Auth-Key': API_TOKEN,
+        // 'X-Auth-Key': API_TOKEN,
       },
     }
   );
@@ -60,7 +60,7 @@ async function getZeroTrustLists() {
     });    
 
     // console.log('Success:', resp.data.success);
-    console.log('Success:', resp);
+    console.log('Gateway Rule Create Result:', resp);
 
 })();
 
