@@ -62,14 +62,15 @@ async function getZeroTrustLists() {
             }
         });
 
+        console.log('Response from API:', resp.data);
+        
         if (resp.data.success) {
             console.log('Success:', resp.data.success);
         } else {
             console.error('API Request Failed:', resp.data.errors);
         }
     } catch (error) {
-        // console.error('Error creating Firewall rule:', error.message);
-        console.error('Error creating Firewall rule:', resp.data);
+        console.error('Error creating Firewall rule:', error.message);
         process.exit(1);
     }
 })();
