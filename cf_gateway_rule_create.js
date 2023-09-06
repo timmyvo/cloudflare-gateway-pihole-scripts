@@ -47,7 +47,7 @@ async function getZeroTrustLists() {
             'Authorization': `Bearer ${API_TOKEN}`,
             'Content-Type': 'application/json',
             'X-Auth-Email': ACCOUNT_EMAIL,
-            // 'X-Auth-Key': API_TOKEN,
+            'X-Auth-Key': API_TOKEN,
         },
         data: {
             "name": "CGPS Filter Lists",
@@ -58,25 +58,9 @@ async function getZeroTrustLists() {
             "traffic": wirefilter_expression,
         }
     });    
-    // if (resp instanceof Error) {
-    //     // This is an error response
-    //     console.error('Error:', resp.message); // Log the error message
-    //     console.log('Status:', resp.response.status); // Log the HTTP status code (e.g., 400)
-    //     console.log('Status Text:', 'Bad Request'); // Log the status text (since it's a 400 error)
-    // } else {
-    //     // This is a successful response
-    //     console.log('Response from API:', resp.data);
-    //     console.log('Status:', resp.status);
-    //     console.log('Status Text:', resp.statusText);
-    // }
 
-    // console.log('Success:', resp);
     console.log('Success:', resp.data.success);
-    // console.log('Log:', resp.data);
-    // console.log('Status:', resp.response.status);
-    // console.log('Status Text:', resp.response.statusText);
-    // console.log('Error:', resp.data.errors);
-    // console.log('Error Message:', resp.data.messages);
+
 })();
 
 async function sleep(ms) {
