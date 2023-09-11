@@ -29,6 +29,7 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.extended.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.lgwebos.txt
+  https://o0.pages.dev/Lite/hosts.txt
 )
 
 # download all files in parallel and append them to input.csv
