@@ -29,7 +29,7 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.extended.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.lgwebos.txt
-  https://o0.pages.dev/Lite/hosts.txt
+  # https://o0.pages.dev/Lite/hosts.txt
   https://raw.githubusercontent.com/nextdns/dns-bypass-methods/main/encrypted-dns
 )
 
