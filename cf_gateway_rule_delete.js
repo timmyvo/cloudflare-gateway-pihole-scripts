@@ -42,7 +42,7 @@ async function getZeroTrustRules() {
     });
 
     console.log('Success: ', resp.data.success);
-    await sleep(100); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 350ms to be safe
+    await sleep(0); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 350ms to be safe
 })();
 
 async function sleep(ms) {
