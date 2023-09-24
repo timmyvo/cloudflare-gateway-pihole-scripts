@@ -31,6 +31,7 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.lgwebos.txt
   # https://o0.pages.dev/Lite/hosts.txt
   https://raw.githubusercontent.com/nextdns/dns-bypass-methods/main/encrypted-dns
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/popupads-onlydomains.txt
 )
 
 # download all files in parallel and append them to input.csv
