@@ -11,8 +11,7 @@ urls=(
   # https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
   # https://adaway.org/hosts.txt
   # https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-  https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
-  https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/gambling/hosts-VN
+  # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/popupads-onlydomains.txt
   # https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt
   # https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
@@ -24,8 +23,9 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt
   # https://o0.pages.dev/Lite/hosts.txt
   https://raw.githubusercontent.com/nextdns/dns-bypass-methods/main/encrypted-dns
-  # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/popupads-onlydomains.txt
   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.txt
+  https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
+  https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/gambling/hosts-VN
 )
 
 # download all files in parallel and append them to input.csv
