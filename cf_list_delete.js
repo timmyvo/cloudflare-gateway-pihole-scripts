@@ -51,7 +51,7 @@ async function main() {
     if (!lists) {
       return console.warn("\nNo file lists found - this is not an issue if it's your first time running this script. Exiting.");
     }
-    console.log(`\nGot ${lists.length} lists`);
+    console.log(`\nFound total ${lists.length} lists are currently in effect`);
     
     const cgps_lists = lists.filter(list => list.name.startsWith('CGPS List'));
     if (!cgps_lists.length) {
