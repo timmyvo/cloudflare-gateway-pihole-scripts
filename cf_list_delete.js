@@ -20,6 +20,7 @@ async function getZeroTrustLists() {
   );
 
   return response.data.result;
+  console.log(response);
 }
 
 ;(async() => {
