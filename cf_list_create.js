@@ -38,6 +38,7 @@ fs.readFile('whitelist.csv', 'utf8', async (err, data) => {
     }).filter(domain => {
       return domainValidationPattern.test(domain);
     });
+    console.log();
     console.log(`Found ${whitelist.length} valid domains in whitelist.`);
   }  
 });
@@ -108,7 +109,6 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   const listsToCreate = Math.ceil(domains.length / 1000);
   await console.log(`Found ${domains.length} valid domains after final trim - ${listsToCreate} list(s) will be created.`);
   console.log();
-  console.log();
   // if (!process.env.CI) console.log(`Found ${domains.length} valid domains in input.csv after cleanup - ${listsToCreate} list(s) will be created`);
 
   // Separate domains into chunks of 1000 (Cloudflare list cap)
@@ -139,9 +139,9 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   
   // Checking upload successful
   if (successfullyCreatedLists === listsToCreate) {
-    console.log(`\n\nSuccessfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.`);
+    console.log(`\nSuccessfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.`);
   } else {
-    console.error(`\n\nExpected to create ${listsToCreate} lists, but only created ${successfullyCreatedLists} lists.`);
+    console.error(`\nExpected to create ${listsToCreate} lists, but only created ${successfullyCreatedLists} lists.`);
     process.exit(1);
   }
 });
