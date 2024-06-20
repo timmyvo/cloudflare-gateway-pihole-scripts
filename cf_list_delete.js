@@ -24,12 +24,13 @@ async function getZeroTrustLists() {
 
 ;(async() => {
     const lists = await getZeroTrustLists();
-    if (!lists) return console.warn("No file lists found - this is not an issue if it's your first time running this script. Exiting.\n");
+    if (!lists) return console.warn("No file lists found - this is not an issue if it's your first time running this script. Exiting.");
+    console.log();
     const cgps_lists = lists.filter(list => list.name.startsWith('CGPS List'));
-    if (!cgps_lists.length) return console.warn("No lists with matching name found - this is not an issue if you haven't created any filter lists before. Exiting.\n");
-
-    if (!process.env.CI) console.log(`Got ${lists.length} lists, ${cgps_lists.length} of which are CGPS lists that will be deleted.\n`);
-
+    if (!cgps_lists.length) return console.warn("No lists with matching name found - this is not an issue if you haven't created any filter lists before. Exiting.");
+    console.log();
+    if (!process.env.CI) console.log(`Got ${lists.length} lists, ${cgps_lists.length} of which are CGPS lists that will be deleted.`);
+    console.log();
     for (const list of cgps_lists) {
         console.log(`Deleting list`, process.env.CI ? "(redacted, running in CI)" : `${list.name} with ID ${list.id}`);
         const resp = await axios.request({
