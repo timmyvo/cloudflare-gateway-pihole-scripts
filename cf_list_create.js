@@ -139,9 +139,15 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
   
   // Checking upload successful
   if (successfullyCreatedLists === listsToCreate) {
-    console.log(`Successfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.\n`);
+    console.log(`Successfully created ${successfullyCreatedLists} out of ${listsToCreate} lists.`);
+    console.log();
+    console.log();
+    console.log();
   } else {
     console.error(`Expected to create ${listsToCreate} lists, but only created ${successfullyCreatedLists} lists.\n`);
+    console.log();
+    console.log();
+    console.log();
     process.exit(1);
   }
 });
