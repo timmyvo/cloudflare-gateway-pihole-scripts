@@ -66,10 +66,7 @@ async function getZeroTrustLists() {
     });    
 
     // console.log('Success:', resp.data.success);
-    console.log();
-    console.log();
-    console.log();
-    console.log('Gateway Rule Create Result:\n', resp);
+    console.log('\n\nGateway Rule Create Result:\n', resp);
 
   } catch (error) {
     console.error('Error:', error.message);
