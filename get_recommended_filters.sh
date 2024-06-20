@@ -23,7 +23,7 @@ urls=(
   # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt
   # https://o0.pages.dev/Lite/hosts.txt
   https://raw.githubusercontent.com/nextdns/dns-bypass-methods/main/encrypted-dns
-  # https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt
+  https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt
   https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
   https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/gambling/hosts-VN
 )
