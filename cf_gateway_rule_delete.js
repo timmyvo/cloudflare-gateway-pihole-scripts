@@ -30,6 +30,7 @@ async function getZeroTrustRules() {
         console.log();
         console.log("Found CGPS Filter Lists");      
         console.log(`Deleting rule`, process.env.CI ? "(redacted, running in CI)" : `${filtered_rule.name} with ID ${filtered_rule.id}`);
+        console.log();
 
         const resp = await axios.request({
             method: 'DELETE',
