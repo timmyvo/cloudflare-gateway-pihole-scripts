@@ -62,7 +62,7 @@ async function main() {
     for (const list of cgps_lists) {
       console.log(`Deleting list ${list.name} with ID ${list.id}`);
       await deleteList(list.id, list.name);
-      await sleep(300); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 3000ms to be safe
+      await sleep(1500); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 3000ms to be safe
     }
   } catch (error) {
     console.error('Error in main function:', error);
