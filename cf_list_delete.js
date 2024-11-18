@@ -39,7 +39,9 @@ async function deleteList(listId, listName) {
         'X-Auth-Key': API_TOKEN,
       },
     });
-    console.log('Success:', response.data.success, `Deleted list ${listName} with ID ${listId}`);
+    // console.log('Success:', response.data.success, `Deleted list ${listName} with ID ${listId}`);
+    console.log(`Successfully deleted ${listName}`);
+
   } catch (error) {
     console.error(`Error deleting list ${listName} with ID ${listId}:`, error);
   }
