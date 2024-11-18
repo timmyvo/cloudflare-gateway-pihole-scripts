@@ -131,7 +131,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
 
     try {
       await createZeroTrustList(listName, properList, (index+1), listsToCreate);
-      await sleep(300); // Sleep for 1000ms between list additions
+      await sleep(1500); // Sleep for 1000ms between list additions
       successfullyCreatedLists++;
       console.log(`Successfully created "${listName}"`);
     } catch (error) {
