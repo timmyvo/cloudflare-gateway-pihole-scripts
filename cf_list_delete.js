@@ -62,7 +62,7 @@ async function main() {
     console.log(`\nFound ${cgps_lists.length} CGPS lists that will be deleted.`);
 
     for (const list of cgps_lists) {
-      console.log(`Deleting list ${list.name} with ID ${list.id}`);
+      console.log(`Deleting ${list.name} with ID ${list.id}`);
       await deleteList(list.id, list.name);
       await sleep(1500); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 3000ms to be safe
     }
