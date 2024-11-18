@@ -29,7 +29,7 @@ async function getZeroTrustRules() {
     if (filtered_rule) {
         console.log();
         console.log("Found CGPS Filter Lists");      
-        console.log(`Deleting rule`, process.env.CI ? "(redacted, running in CI)" : `${filtered_rule.name} with ID ${filtered_rule.id}`);
+        console.log(`Deleting rule ${filtered_rule.name} with ID ${filtered_rule.id}`);
 
         const resp = await axios.request({
             method: 'DELETE',
@@ -43,7 +43,7 @@ async function getZeroTrustRules() {
         });
 
         console.log('Success: ', resp.data.success);
-        await sleep(3000); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 3000ms to be safe
+        await sleep(300); // Cloudflare API rate limit is 1200 requests per 5 minutes, so we sleep for 3000ms to be safe
     } else {
         console.warn("No rule with matching name found - this is not an issue if you haven't run the create script yet. Exiting.");
     }
