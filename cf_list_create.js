@@ -133,7 +133,7 @@ fs.readFile('input.csv', 'utf8', async (err, data) => {
       await createZeroTrustList(listName, properList, (index+1), listsToCreate);
       await sleep(300); // Sleep for 1000ms between list additions
       successfullyCreatedLists++;
-      console.log(`Successfully created list "${listName}"`);
+      console.log(`Successfully created "${listName}"`);
     } catch (error) {
       // console.error(`Error creating list `, process.env.CI ? "(redacted on CI)" :  `"${listName}": ${error.response.data}`);
       console.error(`Error creating list "${listName}":`, error.response ? error.response.data : error.message);
@@ -193,7 +193,7 @@ async function createZeroTrustList(name, items, currentItem, totalItems) {
 
   const listId = response.data.result.id;
   // console.log(`Created Zero Trust list`, process.env.CI ? "(redacted on CI)" : `"${name}" with ID ${listId} - ${totalItems - currentItem} left`);
-  console.log(`Creating Zero Trust list "${name}" with ID ${listId} - ${totalItems - currentItem} left`);
+  console.log(`Creating "${name}" with ID ${listId} - ${totalItems - currentItem} left`);
 }
 
 function percentage(percent, total) {
